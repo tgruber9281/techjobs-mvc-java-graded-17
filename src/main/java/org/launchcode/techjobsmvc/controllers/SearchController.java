@@ -31,7 +31,7 @@ public class SearchController {
     public String displaySearchResults(Model model, @RequestParam String searchType,
                                 @RequestParam String searchTerm) {
         ArrayList<Job> jobs;
-        if (searchType.equals("all") || searchTerm.isEmpty()){
+        if (searchTerm.toLowerCase().equals("all") || searchTerm.isEmpty()){
             jobs = JobData.findAll();
         } else {
             jobs = JobData.findByColumnAndValue(searchType, searchTerm);
