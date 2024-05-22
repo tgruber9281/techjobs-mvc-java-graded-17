@@ -30,29 +30,29 @@
 
 <table th:fragment="list-jobs-bonus-mission" th:each="job : ${jobs}" class="job-listing">
     <tr>
-        <td th:text="${'ID'}">ID</td>
-        <td th:text="${job.id}">1</td>
+        <td th:text="${'ID'}" th:style="${'background-color: ' + color}"></td>
+        <td th:text="${job.id}"></td>
     </tr>
     <tr>
-        <td th:text="${'Name'}"></td>
+        <td th:text="${#strings.toUpperCase('Name')}" th:style="${'background-color: ' + color}"></td>
         <td th:text="${job.name}"></td>
     </tr>
     <tr>
-        <td th:text="${'Employer'}"></td>
+        <td th:text="${#strings.toUpperCase('Employer')}" th:style="${'background-color: ' + color}"></td>
         <td><a th:href="@{/list/jobs(column=${'employer'},value=${job.employer})}" th:text="${job.employer}"></a></td>
     </tr>
     <tr>
-        <td th:text="${'Location'}"></td>
+        <td th:text="${#strings.toUpperCase('Location')}" th:style="${'background-color: ' + color}"></td>
         <td><a th:href="@{/list/jobs(column=${'location'},value=${job.location})}"
                th:text="${job.location}"></a></td>
     </tr>
     <tr>
-        <td th:text="${'Position Type'}"></td>
+        <td th:text="${#strings.toUpperCase('Position Type')}" th:style="${'background-color: ' + color}"></td>
         <td><a th:href="@{/list/jobs(column=${'positionType'},value=${job.positionType})}"
                th:text="${job.positionType}"></a></td>
     </tr>
     <tr>
-        <td th:text="${'Skill'}"></td>
+        <td th:text="${#strings.toUpperCase('Skill')}" th:style="${'background-color: ' + color}"></td>
         <td><a th:href="@{/list/jobs(column=${'coreCompetency'},value=${job.coreCompetency})}"
                th:text="${job.coreCompetency}"></a></td>
     </tr>
@@ -60,28 +60,28 @@
 
 <table th:fragment="list-jobs-passing" th:each="job : ${jobs}" class="job-listing">
     <tr>
-        <td th:text="${'ID'}">ID</td>
-        <td th:text="${job.id}">1</td>
+        <td th:text="${'ID'}"></td>
+        <td th:text="${job.id}"></td>
     </tr>
     <tr>
-        <td th:text="${'Name'}">Name</td>
-        <td th:text="${job.name}">Junior Data Analyst</td>
+        <td th:text="${'Name'}"></td>
+        <td th:text="${job.name}"></td>
     </tr>
     <tr>
-        <td th:text="${'Employer'}">Employer</td>
-        <td th:text="${job.employer}">Lockerdome</td>
+        <td th:text="${'Employer'}"></td>
+        <td th:text="${job.employer}"></td>
     </tr>
     <tr>
-        <td th:text="${'Location'}">Location</td>
-        <td th:text="${job.location}">Saint Louis</td>
+        <td th:text="${'Location'}"></td>
+        <td th:text="${job.location}"></td>
     </tr>
     <tr>
-        <td th:text="${'Position Type'}">Postion Type</td>
-        <td th:text="${job.positionType}">Data Scientist / Business Intelligence</td>
+        <td th:text="${'Position Type'}"></td>
+        <td th:text="${job.positionType}"></td>
     </tr>
     <tr>
-        <td th:text="${'Skill'}">Skill</td>
-        <td th:text="${job.coreCompetency}">Statistical Analysis</td>
+        <td th:text="${'Skill'}"></td>
+        <td th:text="${job.coreCompetency}"></td>
     </tr>
 </table>
 

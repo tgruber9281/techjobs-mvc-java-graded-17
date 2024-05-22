@@ -30,8 +30,10 @@ public class SearchController extends TechJobsController {
         ArrayList<Job> jobs;
         if (searchTerm.toLowerCase().equals("all") || searchTerm.isEmpty()){
             jobs = JobData.findAll();
+            model.addAttribute("color", "#18fbff");
         } else {
             jobs = JobData.findByColumnAndValue(searchType, searchTerm);
+            model.addAttribute("color", "#d7ff18");
         }
         model.addAttribute("title", "Jobs with " + searchType + ": " + searchTerm);
         model.addAttribute("jobs", jobs);

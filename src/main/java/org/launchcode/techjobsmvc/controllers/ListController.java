@@ -36,10 +36,12 @@ public class ListController extends TechJobsController {
         if (column.equals("all")){
             jobs = JobData.findAll();
             model.addAttribute("title", "All Jobs");
+            model.addAttribute("color", "#36b339");
         } else {
             jobs = JobData.findByColumnAndValue(column, value);
             model.addAttribute("title",
                     "Jobs with " + getColumnChoices().get(column) + ": " + value);
+            model.addAttribute("color", "#a51bd2");
         }
         model.addAttribute("jobs", jobs);
 
